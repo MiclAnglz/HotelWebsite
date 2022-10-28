@@ -1,0 +1,79 @@
+﻿@page
+@model WesternInn_MajorProject.Pages.Guests.MyDetailsModel
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<IdentityUser> UserManager
+
+@{
+     ViewData["Title"] = "MyDetails";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+@if (ViewData["SuccessDB"] != null)
+{
+    <h1>Thanks. You have successfully updated your details</h1>
+    <h4>Customer</h4>
+      <hr />
+    <div class="card alert alert-success" style="width: 18rem; m-2">
+        <div class="card-body">
+            <h5 class="card-title"><strong>Updated Details</strong></h5>
+            <p class="card-text"><p><strong>First Name: </strong> @Model.Myself.GivenName</p>
+            <p class="card-text"><p><strong>Last Name: </strong> @Model.Myself.Surname</p>
+            <p class="card-text"><p><strong>Postcode: </strong> @Model.Myself.PostCode</p>
+        </p>
+            <p><font color="green"> You can start browsing other links now.</font></p>
+        </div>
+    </div>
+}
+else
+{
+    <h2>My Details</h2>
+
+    @if ((string)ViewData["ExistInDB"] == "true")
+    {
+        <h4>Welcome, <i>@ViewData["Name"]</i>  You can edit your details below. </h4>
+    }
+    else
+    {
+        <h4>Welcome, <i>@User.Identity?.Name!</i> You should enter your details below before browsing other links. </h4>
+    }
+
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                @if ((string)ViewData["ExistInDB"] == "true")
+                {
+                    @* The value of the email is bound with the model. *@
+                    <input type="hidden" asp-for="Myself.Email"/>
+                }
+                else
+                {
+                    <input type="hidden" asp-for="Myself.Email" value="dummy@dummy.edu"/>
+                }
+                <div class="form-group m-2">
+                    <label asp-for="Myself.GivenName" class="control-label"></label>
+                    <input asp-for="Myself.GivenName" class="form-control" />
+                    <span asp-validation-for="Myself.GivenName" class="text-danger"></span>
+                </div>
+                <div class="form-group m-2">
+                    <label asp-for="Myself.Surname" class="control-label"></label>
+                    <input asp-for="Myself.Surname" class="form-control" />
+                    <span asp-validation-for="Myself.Surname" class="text-danger"></span>
+                </div>
+                <div class="form-group m-2">
+                    <label asp-for="Myself.PostCode" class="control-label"></label>
+                    <input asp-for="Myself.PostCode" class="form-control" />
+                    <span asp-validation-for="Myself.PostCode" class="text-danger"></span>
+                </div>
+                <div class="form-group m-2">
+                    <input type="submit" value="Submit" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

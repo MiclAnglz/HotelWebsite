@@ -1,0 +1,100 @@
+﻿@page
+@model WesternInn_MajorProject.Pages.Rooms.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Search Available Rooms</h1>
+
+<hr />
+<div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group m-2">
+                    <label asp-for="searchroom.BedCount" class="control-label">Number of Beds</label>
+                    <select asp-for="searchroom.BedCount" class ="form-select" asp-items="ViewBag.maxRooms"></select>
+                </div>
+                <div class="form-group m-2">
+                    <label asp-for="searchroom.CheckIn" class="control-label"></label>
+                    <input asp-for="searchroom.CheckIn" class="form-control" />
+                    <span asp-validation-for="searchroom.CheckIn" class="text-danger"></span>
+                </div>
+                <div class="form-group m-2">
+                    <label asp-for="searchroom.CheckOut" class="control-label"></label>
+                    <input asp-for="searchroom.CheckOut" class="form-control" />
+                    <span asp-validation-for="searchroom.CheckOut" class="text-danger"></span>
+                </div>
+                <div class="form-group m-2">
+                    <input type="submit" value="Submit" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+@* Check this page is requested for the first time or after 'post' method.
+    If 'post', then display the comparison results. *@
+@if (Model.Room != null)
+{
+    <div>
+        <hr />
+        @if (Model.Room.Count == 0)
+        {
+            <h4>
+                There are no rooms available for the selected dates.
+            </h4>
+        }
+        else
+        {
+            <h1>Rooms Avialable</h1>
+
+            <table class="table">
+                <!-- .table is a Bootstrap class giving table styles -->
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Room[0].ID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Room[0].Level)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Room[0].BedCount)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Room[0].Price)
+                    </th>
+                </tr>
+
+                @foreach (var item in Model.Room)
+                {
+                    
+                    <tr>
+                        <td>
+                            <a asp-page="/Bookings/Create" asp-route-id="@item.ID" asp-route-checkindate="@ViewData["checkindate"]" 
+                            asp-route-checkoutdate="@ViewData["checkoutdate"]">
+                            @Html.DisplayFor(modelItem => item.ID)
+                            </a>
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Level)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BedCount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                    </tr>
+                }
+            </table>
+        }
+    </div>
+}
+
+@* Inlcude JavaScript for client-side vaildations.*@
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+

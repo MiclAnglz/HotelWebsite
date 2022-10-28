@@ -1,0 +1,205 @@
+﻿@page
+@model WesternInn_MajorProject.Pages.Bookings.BookingsStatisticsModel
+@{
+    ViewData["Title"] = "Booking Stats";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <div class="col-md-6">
+        <p><h2>Total Bookings For Each Room</h2></p>
+        <table class="table">
+            <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(m => m.bookingStats[0].RoomId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(m => m.bookingStats[0].NumberOfBookings)
+                </th>
+            </tr>
+            </thead>
+            @foreach (var item in Model.bookingStats)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RoomId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NumberOfBookings)
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="col-md-6 align-self-center d-flex justify-content-center">  
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <canvas id="myChart1" style="max-width:400px; max-height:400px"></canvas>
+            <script>
+                const ctx1 = document.getElementById('myChart1').getContext('2d');
+                var labels1 = [];
+                var totals1 = [];
+
+            @if(Model.bookingStats.Count() > 0)
+            {
+                @foreach (var item in Model.bookingStats)
+                {
+                    @:labels1.push('@item.RoomId');
+                    @:totals1.push('@item.NumberOfBookings');
+                }
+
+            }
+          
+            const myChart1 = new Chart(ctx1, {
+                type: 'pie',
+                data: {
+                    labels: labels1,
+                    datasets: [{
+                        label: 'YEAR',
+                        data: totals1,
+                        offset: 20,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1,                          
+                    }]
+                },
+
+                options:{
+                    title:{
+                        display:true,
+                        text: 'Room Id'
+                    },
+
+                    legend: {
+                        display: false,
+                        postion: 'right'
+                    }
+                }
+                    
+            });
+            
+            </script>
+        </div>
+</div>
+
+<hr/>
+
+    <div class="row">
+        <div class="col-md-6">
+            <p><h2>Total Rooms Booked Per Month</h2></p>
+                <form method="get">
+                    <div class="form-group row">
+                        <div class="col-3 m-2">
+                            <label asp-for="SearchString" class="control-label">Filter by Year</label>
+                            <select asp-for="SearchString" class ="form-select" asp-items="ViewBag.years"></select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-3 m-2">
+                            <input type="submit" value="Submit" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </form>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(m => m.stats[0].Month)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(m => m.stats[0].Year)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(m => m.stats[0].Amount_Booked)
+                        </th>
+                    </tr>
+                </thead>
+                @foreach (var item in Model.stats)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Month)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Year)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Amount_Booked)
+                        </td>
+                    </tr> 
+                }
+            </table>
+        </div>
+        <div class="col-md-6 align-self-center">  
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <canvas id="myChart"></canvas>
+            <script>
+                const ctx = document.getElementById('myChart').getContext('2d');
+                var labels = [];
+                var totals = [];
+
+            @if(Model.stats.Count() > 0)
+            {
+                @foreach (var item in Model.stats)
+                {
+                    @:labels.push('@item.Month');
+                    @:totals.push('@item.Amount_Booked');
+                }
+
+            }
+
+            const myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'YEAR' + "-" + " " + @ViewData["year"],
+                        data: totals,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                              
+                        }
+                    },
+                    title:{
+                        display:true,
+                    }
+                }
+            });
+            </script>
+        </div>
+    </div>
+    

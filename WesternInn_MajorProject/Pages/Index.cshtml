@@ -1,0 +1,68 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="d-md-grid gap-2">
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="1500">
+          <img src="~/images/Room.jpg" class="d-block w-100" alt="Hotel Room">
+          <div class="carousel-caption d-none d-md-block">
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="1500">
+          <img src="~/images/relaxation.jpg" class="d-block w-100" alt="Massage">
+          <div class="carousel-caption d-none d-md-block">
+          </div>
+        </div>
+        <div class="carousel-item" data-bs-interval="1500">
+          <img src="~/images/hotelPool.jpg" class="d-block w-100" alt="Hotel Pool">
+          <div class="carousel-caption d-none d-md-block">
+          </div>
+        </div>
+        <div class="carousel-item " data-bs-interval="1500">
+          <img src="~/images/gym.jpg" class="d-block w-100" alt="Gym">
+          <div class="carousel-caption d-none d-md-block">
+          </div>
+        </div>
+        <div class="carousel-item " data-bs-interval="1500">
+          <img src="~/images/Dinningtable.jpg" class="d-block w-100" alt="Dinning Table">
+          <div class="carousel-caption d-none d-md-block">
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <div class="row">
+      <div class="col-md-7">
+          <h2>Welcome to <i>Western</i><Strong style="color: red">Inn</Strong></h2>
+      </div>
+      <div class="col-md-5">
+         <ul>
+          <li><a href="/Index">Home</a></li>
+            @if (User.IsInRole("Administrator"))
+            {
+                <li class="nav-item">
+                    <a href="/Bookings/ManageBookings">Manage Bookings</a>
+                </li>
+            }
+            @if (User.IsInRole("Guest"))
+            {
+            <li class="nav-item">
+                <a href="https://www.sydney.com/things-to-do">Explore Sydney</a>
+            </li>
+            }
+          <li><a href="/Privacy">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+</div>

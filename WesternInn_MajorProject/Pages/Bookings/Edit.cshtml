@@ -1,0 +1,57 @@
+﻿@page
+@model WesternInn_MajorProject.Pages.Guests.Bookings.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Booking</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Booking.ID" />
+            <div class="form-group m-3">
+                <label asp-for="Booking.RoomID" class="control-label"></label>
+                <select asp-for="Booking.RoomID" class="form-select" asp-items="ViewBag.RoomID"></select>
+            </div>
+            <div class="form-group m-3">
+                <label asp-for="Booking.GuestEmail" class="control-label"></label>
+                <select asp-for="Booking.GuestEmail" class="form-select" asp-items="ViewBag.GuestEmail"></select>
+            </div>
+            <div class="form-group m-3">
+                <label asp-for="Booking.CheckIn" class="control-label"></label>
+                <input asp-for="Booking.CheckIn" class="form-control" />
+                <span asp-validation-for="Booking.CheckIn" class="text-danger"></span>
+            </div>
+            <div class="form-group m-3">
+                <label asp-for="Booking.CheckOut" class="control-label"></label>
+                <input asp-for="Booking.CheckOut" class="form-control" />
+                <span asp-validation-for="Booking.CheckOut" class="text-danger"></span>
+            </div>
+            <div class="form-group m-3">
+                <label asp-for="Booking.Cost" class="control-label"></label>
+                <input asp-for="Booking.Cost" class="form-control" />
+                <span asp-validation-for="Booking.Cost" class="text-danger"></span>
+            </div>
+            <div class="form-group m-3">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+@if ((string)ViewBag.test1 == "This booking is unavailable" )
+        {
+            <div class="alert alert-danger" role="alert">
+              <p>The booking unavailable.</p>
+              <a asp-page="ManageBookings">View booking List</a>
+            </div>
+        }
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
