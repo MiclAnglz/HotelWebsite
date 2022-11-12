@@ -11,7 +11,7 @@ WSD Major Project - ASP.NET, Bootstrap, Razor, C#, SQLite
   
 <hr/>
  <strong>Logins</strong>
- 
+ <br>
  <strong>Admin</strong>
  <div>username: <i>admin@westerninn.com</i></div>
  <div>password: <i>P@ssw0rd</i></div>
