@@ -11,7 +11,7 @@ WSD Major Project - ASP.NET, Bootstrap, Razor, C#, SQLite
   
 <strong>Addional Features Added:</strong>
 
-- created dynamic charts and graphs for the Statistics page.
+- Created dynamic charts and graphs for the Statistics page.
 
 - Created a custom view template from the "Booking" table in SQLite and implmented the records in the statistics page of the site. The stat caputures the number of bookings per month and can be filtered by year.  <i>(admin login)</i>
 
