@@ -11,7 +11,9 @@ WSD Major Project - ASP.NET, Bootstrap, Razor, C#, SQLite
 
 <strong>Additional Features:</strong>
 
-- Created a custom view template from the "Booking" table in SQLite and implmented the records in the statistics page that displays the number of bookings per month. The records can be filtered by year. Table records and charts are also dynamic and will change depending on the records that are saved in thhe database 
+- Created a custom view template from the "Booking" table in SQLite and implmented the records in the statistics page of the site. 
+  
+  The stat caputures the number of bookings per month and can be filtered by year. Table records and charts are also dynamic and will change depending on the     records that are saved in thhe database.
 
 <img width="129" alt="image" src="https://user-images.githubusercontent.com/103421610/201463177-b0ad7097-b338-4304-a199-b74dfe35e351.png">
 
