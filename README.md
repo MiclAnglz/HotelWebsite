@@ -25,7 +25,7 @@ WSD Major Project - ASP.NET, Bootstrap, Razor, C#, SQLite
 
 - The date entries are also fully valitdated so the user can not enter a date before todays. This feature was only meant to be done by the students taking the advanced module of this unit. <i>(user/admin login)</i>
 
-- a customer will recieve a unique booking number after booking a room. <i>(user/admin login)</i>
+- Customer will recieve a unique booking number after booking a room. <i>(user/admin login)</i>
 
 <hr/>
  <strong>Login Credentials</strong>
