@@ -21,7 +21,7 @@ WSD Major Project - ASP.NET, Bootstrap, Razor, C#, SQLite
 
   
 <hr/>
- <strong>Logins</strong>
+ <strong>Login Credentials</strong>
  <br>
  <br>
  <strong>Admin</strong>
