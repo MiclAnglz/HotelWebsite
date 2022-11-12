@@ -3,15 +3,13 @@ WSD Major Project - ASP.NET, Bootstrap, Razor, C#, SQLite
 
  Logins
  
- Admin
+ <strong>Admin</strong>
+ username: <i>admin@westerninn.com</i>
+ password: <i>P@ssw0rd</i>
  
- username: admin@westerninn.com
- password: P@ssw0rd
- 
- Standard user
- 
+ <strong>Standard user</strong>
  username: 
- password
+ password:
  
 
 <strong>Task: </strong> This project is to build a website for the fictitious Western Inn that serves the visitors to WSU, as well as the public. This website should allow guests to search and book rooms, and allow administrators to offer discounts to university visitors and view statistics, etc.
