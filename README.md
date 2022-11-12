@@ -1,11 +1,11 @@
 # HotelWebsite
 WSD Major Project - ASP.NET, Bootstrap, Razor, C#, SQLite
 
- Logins
+ <strong>Logins</strong>
  
  <strong>Admin</strong>
- username: <i>admin@westerninn.com</i>
- password: <i>P@ssw0rd</i>
+ <div>username: <i>admin@westerninn.com</i></div>
+ <div>password: <i>P@ssw0rd</i></div>
  
  <strong>Standard user</strong>
  username: 
