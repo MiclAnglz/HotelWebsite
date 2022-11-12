@@ -11,7 +11,7 @@ WSD Major Project - ASP.NET, Bootstrap, Razor, C#, SQLite
   
   The project in this repo is my version of the project that I completed by myself.
   
-
+<hr/>
  <strong>Logins</strong>
  
  <strong>Admin</strong>
