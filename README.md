@@ -23,7 +23,7 @@ WSD Major Project - ASP.NET, Bootstrap, Razor, C#, SQLite
 
 <img width="410" alt="image" src="https://user-images.githubusercontent.com/103421610/201464621-faa7ebc2-f542-47cc-9a1d-399ce9dc57b4.png">
 
-<img width="237" alt="image" src="https://user-images.githubusercontent.com/103421610/201544698-3171c281-e85c-4e47-aa0f-67bf3a580251.png">
+<img width="233" alt="image" src="https://user-images.githubusercontent.com/103421610/201544744-dd2605e8-22fb-4500-b0fb-c0ec1f8db334.png">
 
 - The date entries are also fully valitdated so the user can not enter a date before todays date. 
  
