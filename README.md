@@ -41,4 +41,4 @@ WSD Major Project - ASP.NET, Bootstrap, Razor, C#, SQLite
  <div>username: <i>jose@gmail.com</i></div>
  <div>password: <i>Jose39$</i></div>
  <br>
- - Feel free to add users.
+ <strong>Feel free to add users.</strong>
