@@ -29,7 +29,7 @@ WSD Major Project - ASP.NET, Bootstrap, Razor, C#, SQLite
  
 <strong>note: </strong>This feature was only meant to be done by the students taking the advanced module of this unit. <i>(user/admin login)</i>
 
-- Customer will recieve a unique booking number after booking a room. <i>(user/admin login)</i>
+- The customer will recieve a unique booking number after booking a room. <i>(user/admin login)</i>
 
 <hr/>
  <strong>Usable Login Credentials</strong>
