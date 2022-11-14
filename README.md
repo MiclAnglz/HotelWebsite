@@ -32,7 +32,7 @@ WSD Major Project - ASP.NET, Bootstrap, Razor, C#, SQLite
 - Customer will recieve a unique booking number after booking a room. <i>(user/admin login)</i>
 
 <hr/>
- <strong>Login Credentials</strong>
+ <strong>Usable Login Credentials</strong>
  <br>
  <br>
  <strong>Admin</strong>
