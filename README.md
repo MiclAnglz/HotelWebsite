@@ -13,7 +13,7 @@ WSD Major Project - ASP.NET, Bootstrap, Razor, C#, SQLite
 
 - Created dynamic charts and graphs for the Statistics page.
 
-- Created a custom view template from the "Booking" table in SQLite and implmented the records in the statistics page of the site. The stat caputures the number of bookings per month and can be filtered by year.  <i>(admin login)</i>
+- Created a custom view template from the "Booking" table in SQLite and implmented the records in the statistics page of the site. The stat caputures the number of bookings per month and can be filtered by year.  <strong><i>(admin login)</i></strong>
 
 <img width="129" alt="image" src="https://user-images.githubusercontent.com/103421610/201463177-b0ad7097-b338-4304-a199-b74dfe35e351.png">
 
@@ -27,9 +27,9 @@ WSD Major Project - ASP.NET, Bootstrap, Razor, C#, SQLite
 
 - The date entries are also fully valitdated so the user can not enter a date before todays date. 
  
-<strong>note: </strong>This feature was only meant to be done by the students taking the advanced module of this unit. <i>(user/admin login)</i>
+<strong>note: </strong>This feature was only meant to be done by the students taking the advanced module of this unit. <strong><i>(user&admin login)</i></strong>
 
-- The customer will recieve a unique booking number after booking a room. <i>(user/admin login)</i>
+- The customer will recieve a unique booking number after booking a room. <strong><i>(user&admin login)</i></strong>
 
 <hr/>
  <strong>Usable Login Credentials</strong>
