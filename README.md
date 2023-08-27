@@ -7,7 +7,7 @@ WSD Major Project - ASP.NET, Bootstrap, Razor, C#, SQLite
 
 - A more detailed description of the project task can be found in the "ProjectBrief" folder.
 
-- This project was a group project; however, the project in this repo is my version of the project that I completed myself. From start to finish.
+- Originally a group effort, the project presented in this repository is my individual rendition. I managed all aspects of its development, from inception to completion..
   
 <strong>Addional Features Added:</strong>
 
