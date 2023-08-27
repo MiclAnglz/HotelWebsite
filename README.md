@@ -25,7 +25,7 @@ WSD Major Project - ASP.NET, Bootstrap, Razor, C#, SQLite
 
 <img width="233" alt="image" src="https://user-images.githubusercontent.com/103421610/201544744-dd2605e8-22fb-4500-b0fb-c0ec1f8db334.png">
 
-- The date entries are also fully valitdated so the user can not enter a date before todays date. 
+- The date entries are also valitdated so the user can not enter a date before todays date. 
  
 <strong>note: </strong>This feature was only meant to be done by the students taking the advanced module of this unit. <strong><i>(user&admin login)</i></strong>
 
