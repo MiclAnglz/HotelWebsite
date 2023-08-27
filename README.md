@@ -1,7 +1,7 @@
 # Hotel Website
 WSD Major Project - ASP.NET, Bootstrap, Razor, C#, SQLite
 
-<strong>Task: </strong> The objective of this prject was to construct a website for the fictional Hotel (Western Inn). The envisioned website aims to provide guests with the ability to effortlessly explore room options, make reservations, and facilitate administrators to apply discounts on rooms and provide statistical insights.
+<strong>Task: </strong> The objective of this project was to construct a website for the fictional Hotel (Western Inn). The envisioned website aims to provide guests with the ability to effortlessly explore room options, make reservations, and facilitate administrators to apply discounts on rooms and provide statistical insights.
 
 <strong>Notes:</strong>
 
